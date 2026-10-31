@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>یادی ١٨ ساڵیت پیرۆز دیە قن ڕەش 🎀✨</title>
+  
+  <!-- Apple Touch Icon for Home Screen Customization -->
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%23ff69b4'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='35' fill='white'>🎂</text></svg>">
+  <meta name="apple-mobile-web-app-title" content="Happy Birthday">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <style>
+    :root {
+      --bg-color: #fff0f5;
+      --card-bg: #ffffff;
+      --primary: #ff69b4;
+      --primary-dark: #ff1493;
+      --accent: #ffb6c1;
+      --text: #4a4a4a;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Floating Stickers Background Effect */
+    .floating-sticker {
+      position: absolute;
+      font-size: 24px;
+      animation: float 6s infinite ease-in-out;
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+
+    /* Lock Screen */
+    #lock-screen {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .pass-input {
+      padding: 12px 20px;
+      border: 2px solid white;
+      border-radius: 25px;
+      outline: none;
+      font-size: 18px;
+      text-align: center;
+      margin-top: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text);
+    }
+
+    .btn {
+      background: white;
+      color: var(--primary-dark);
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 700px;
+      width: 90%;
+      margin: 30px auto;
+      display: none;
+      z-index: 10;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.15);
+      border: 2px solid #ffe4e1;
+      text-align: center;
+      position: relative;
+    }
+
+    h1, h2 {
+      color: var(--primary-dark);
+    }
+
+    /* Countdown Timer Style */
+    .countdown-box {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .time-unit {
+      background: #fff0f5;
+      padding: 10px 15px;
+      border-radius: 12px;
+      border: 1px solid var(--accent);
+      min-width: 50px;
+    }
+
+    .time-unit span {
+      display: block;
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--primary-dark);
+    }
+
+    .time-unit label {
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    /* Special Letter Style */
+    .letter-box {
+      background: #fff5f8;
+      border: 2px dashed var(--primary);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: right;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* Gift Box & Video Section */
+    .gift-container {
+      cursor: pointer;
+      padding: 20px;
+      border: 2px dashed var(--primary);
+      border-radius: 15px;
+      background: #fff5f8;
+      transition: 0.3s;
+    }
+
+    .gift-icon {
+      font-size: 50px;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .video-grid {
+      display: none;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 15px;
+      border: 3px solid var(--accent);
+    }
+
+    /* Quiz Steps (Clean: no answers shown immediately) */
+    .quiz-step {
+      display: none;
+    }
+
+    .quiz-step.active {
+      display: block;
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #fff0f5;
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .quiz-option:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .feedback-msg {
+      font-weight: bold;
+      margin-top: 10px;
+      min-height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Decorative Stickers -->
+  <div class="floating-sticker" style="top: 5%; left: 10%;">🎀</div>
+  <div class="floating-sticker" style="top: 15%; right: 10%;">🧸</div>
+  <div class="floating-sticker" style="top: 50%; left: 5%;">💖</div>
+  <div class="floating-sticker" style="top: 80%; right: 8%;">✨</div>
+  <div class="floating-sticker" style="top: 35%; right: 15%;">🌸</div>
+
+  <!-- Lock Screen -->
+  <div id="lock-screen">
+    <h1>💖 بەخێربیی دیە قن ڕەش 💖</h1>
+    <p>هینت: <b>دیە ئاشقی کێیە؟</b> 🤔</p>
+    <input type="password" id="passcode" class="pass-input" placeholder="کۆدی نهێنی بنووسە...">
+    <button onclick="checkPass()" class="btn">بچۆ ژوورەوە 🎀</button>
+    <p id="error-msg" style="color: yellow; display: none; margin-top: 10px;">کۆدەکە هەڵەیە! دووبارە تاقی بکەرەوە 😜</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container" id="main-content">
+    
+    <!-- Header & Countdown -->
+    <div class="card">
+      <h1>🎉 یادی ١٨ ساڵیت پیرۆز بێت دیە گیان 🎀✨</h1>
+      <p>کاتژمێرژمێر بۆ ڕۆژی لەدایکبوونت (١ی مانگی ١٢):</p>
+      <div class="countdown-box">
+        <div class="time-unit"><span id="days">00</span><label>ڕۆژ</label></div>
+        <div class="time-unit"><span id="hours">00</span><label>کاتژمێر</label></div>
+        <div class="time-unit"><span id="minutes">00</span><label>خولەک</label></div>
+        <div class="time-unit"><span id="seconds">00</span><label>چرکە</label></div>
+      </div>
+    </div>
+
+    <!-- Special Letter Card -->
+    <div class="card">
+      <h2>💌 نامەیەکی تایبەت بۆت 💌</h2>
+      <div class="letter-box">
+        <p><b>بۆ دییە قن ڕەش:</b></p>
+        <p>زۆرم خۆشەوێیت سەگباب بەخوای گەورە جێگەو لە دڵمایە یانی تا ئێستاش لام سەیرە چۆن حیزێک بەو ماوە کەمە چووە دڵمەوە هیوادارم هەموو ڕۆژێکت پڕ بێت لە خۆشی و شادی هیوادارم هەموو ڕۆژێکت پڕ بێت لە من! هەرچەنە هێشتا رۆژی لە دایکبوونت نەهاتووە بەس ویستم دەستپێشخەری بکەم چونکە خۆت ئەزانی من زەخمم 💅💖</p>
+      </div>
+    </div>
+
+    <!-- Surprise Videos Card -->
+    <div class="card">
+      <h2>🎁 دیارییە سوپڕایزەکە 🎁</h2>
+      <div class="gift-container" id="gift-box" onclick="openGift()">
+        <div class="gift-icon">🎁</div>
+        <p><b>کلیک لەسەر دیارییەکە بکە بۆ کردنی ڤیدیۆکان!</b></p>
+      </div>
+
+      <div class="video-grid" id="video-content">
+        <h3>✨ یادگارییە ڤیدیۆییەکانی ئێمە ✨</h3>
+        <video controls src="video1.mp4"></video>
+        <video controls src="video2.mp4"></video>
+        <video controls src="video3.mp4"></video>
+      </div>
+    </div>
+
+    <!-- 8 Questions Quiz Card (Answers hidden until clicked) -->
+    <div class="card">
+      <h2>🧠 کویزی یادگارییەکانمان (٨ پرسیار)</h2>
+      <p style="font-size: 14px; color: #ff1493;">دەبێت وەڵامی ڕاست هەڵبژێریت بۆ ئەوەی بگەی بە پرسیاری دواتر! 🎯</p>
+      
+      <!-- Question 1 -->
+      <div id="q1" class="quiz-step active">
+        <p><b>١. یەکەم جار لە کوێ یەکمان ناسی؟</b></p>
+        <button class="quiz-option" onclick="answerQuiz(1, false)">لە مەکتەب 🏫</button>
+        <button class="quiz-option" onclick="answerQuiz(1, true)">لە پەیمانگا 🎓</button>
+        <button class="quiz-option" onclick="answerQuiz(1, false)">لە بازار 🛍️</button>
+        <p id="fb1" class="feedback-msg"></p>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="q2" class="quiz-step">
+        <p><b>٢. کاممان دەستپێشخەریمان کرد؟</b></p>
+        <button class="quiz-option" onclick="answerQuiz(2, true)">دییە بوو ✨</button>
+        <button class="quiz-option" onclick="answerQuiz(2, false)">سنوولی بوو 🌸</button>
+        <button class="quiz-option" onclick="answerQuiz(2, false)">هەردووکمان پێکەوە 🤝</button>
+        <p id="fb2" class="feedback-msg"></p>
+      </div>
+
+      <!-- Question 3 -->
+      <div id="q3" class="quiz-step">
+        <p><b>٣. نەبەز ئەشقی کاممانە؟</b></p>
+        <button class="quiz-option" onclick="answerQuiz(3, false)">دیە 🤭</button>
+        <button class="quiz-option" onclick="answerQuiz(3, true)">سنوولی 💖</button>
+        <button class="quiz-option" onclick="answerQuiz(3, false)">هیچکەس ڕقی لێیەتی 💅</button>
+        <p id="fb3" class="feedback-msg"></p>
+      </div>
+
+      <!-- Question 4 -->
+      <div id="q4" class="quiz-step">
+        <p><b>٤. سامان ئەشقی کاممانە؟</b></p>
+        <button class="quiz-option" onclick="answerQuiz(4, true)">دیوولی 👑</button>
+        <button class="quiz-option" onclick="answerQuiz(4, false)">سنوولی 🌸</button>
+        <button class="quiz-option" onclick="answerQuiz(4, false)">هیچیان 🛑</button>
+        <p id="fb4" class="feedback-msg"></p>
+      </div>
+
+      <!-- Question 5 -->
+      <div id="q5" class="quiz-step">
+        <p><b>٥. کاممان باڵامان بەرزترە؟</b></p>
+        <button class="quiz-option" onclick="answerQuiz(5, false)">دییە 🦒</button>
+        <button class="quiz-option" onclick="answerQuiz(5, true)">سنوولی 🌿</button>
+        <button class="quiz-option" onclick="answerQuiz(5, false)">بە یەکو کێشن 📏</button>
+        <p id="fb5" class="feedback-msg"></p>
+      </div>
+
+      <!-- Question 6 -->
+      <div id="q6" class="quiz-step">
+        <p><b>٦. کاممان سەگبابترین؟</b></p>
+        <button class="quiz-option" onclick="answerQuiz(6, false)">سنوولی تنهایی 🐕</button>
+        <button class="quiz-option" onclick="answerQuiz(6, false)">دیە تەنهایی 🐈</button>
+        <button class="quiz-option" onclick="answerQuiz(6, true)">هەردووکمان 😈🔥</button>
+        <p id="fb6" class="feedback-msg"></p>
+      </div>
+
+      <!-- Question 7 -->
+      <div id="q7" class="quiz-step">
+        <p><b>٧. خۆشترین یادگاری کەی بوو؟</b></p>
+        <button class="quiz-option" onclick="answerQuiz(7, true)">هاوین بوو ☀️</button>
+        <button class="quiz-option" onclick="answerQuiz(7, false)">زستان بوو ❄️</button>
+        <button class="quiz-option" onclick="answerQuiz(7, false)">بەهار بوو 🌷</button>
+        <p id="fb7" class="feedback-msg"></p>
+      </div>
+
+      <!-- Question 8 -->
+      <div id="q8" class="quiz-step">
+        <p><b>٨. ئێمە پات و ماتین بەڵام کاممان ماتین و کاممان پاتین؟</b></p>
+        <button class="quiz-option" onclick="answerQuiz(8, false)">هەردووکمان پاتین 🙃</button>
+        <button class="quiz-option" onclick="answerQuiz(8, true)">سنوولی ماتە دیوولی پاتە 🎭</button>
+        <button class="quiz-option" onclick="answerQuiz(8, false)">دییە ماتە سنوولی پاتە 🙃</button>
+        <p id="fb8" class="feedback-msg"></p>
+      </div>
+
+      <!-- Quiz Completed Success Message -->
+      <div id="quiz-finished" style="display: none; text-align: center; color: #ff1493;">
+        <h3>🎉 ئەفەرین قن ڕەشی من! هەموو پرسیارەکانت بە دروستی وەڵام داوەتەوە ❤️👑</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Passcode Check
+    function checkPass() {
+      const code = document.getElementById('passcode').value;
+      if (code === 'سامان') {
+        document.getElementById('lock-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      } else {
+        document.getElementById('error-msg').style.display = 'block';
+      }
+    }
+
+    // Countdown Timer for Dec 1
+    function updateCountdown() {
+      const now = new Date();
+      let year = now.getFullYear();
+      let targetDate = new Date(year, 11, 1);
+      if (now > targetDate) {
+        targetDate = new Date(year + 1, 11, 1);
+      }
+      const diff = targetDate - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = String(days).padStart(2, '0');
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Open Gift Videos
+    function openGift() {
+      document.getElementById('gift-box').style.display = 'none';
+      document.getElementById('video-content').style.display = 'grid';
+    }
+
+    // Quiz Navigation Logic (Strict: must get correct to proceed)
+    function answerQuiz(qNumber, isCorrect) {
+      const fb = document.getElementById('fb' + qNumber);
+      if (isCorrect) {
+        fb.style.color = 'green';
+        fb.innerText = 'ئافەرین گیانەکەم، وەڵامەکەت ڕاستە! ✨';
+        setTimeout(() => {
+          document.getElementById('q' + qNumber).classList.remove('active');
+          const nextQ = document.getElementById('q' + (qNumber + 1));
+          if (nextQ) {
+            nextQ.classList.add('active');
+          } else {
+            document.getElementById('quiz-finished').style.display = 'block';
+          }
+        }, 1000);
+      } else {
+        fb.style.color = 'red';
+        fb.innerText = 'نەخێر! هەڵەیە، دووبارە هەوڵ بدەوە 😜';
+      }
+    }
+  </script>
+</body>
+</html>
